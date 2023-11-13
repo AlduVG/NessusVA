@@ -31,23 +31,69 @@ For the sake of simplicity, I'll be skipping the process of downloading Nessus a
 ![NessusReport 12](https://github.com/AlduVG/NessusVA/assets/131760637/64324f1e-492f-46d1-a2f8-0455f1f08dfe)
 
 ## Vulnerabilities remediation.
-![DeletingLog4jVul 13](https://github.com/AlduVG/NessusVA/assets/131760637/61720baa-f899-4d21-9c80-4f83337d8bd3)
+Nessus also provides us with the options to remediate these vulnerabilities. In the scan we performed, there are 8 critical vulnerabilities to address.
+
+![VARemediation-final](https://github.com/AlduVG/NessusVA/assets/131760637/1eabfa01-4ce6-46fc-8abd-a0e78c39d597)
+
+### Upgrading Google Chrome.
+In Google Chrome, we go to settings, select 'Help,' and choose 'About Google Chrome.' 
+
+![GoogleChromeUpdate-2](https://github.com/AlduVG/NessusVA/assets/131760637/08a605ca-55bd-4ee5-ab0a-bb2aef91436a)
+
+Next, we can update the browser to address the vulnerability found. It's also a good idea to keep Google updated as soon as an update is released to prevent future vulnerabilities.
+
+![GoogleChromeUpdate](https://github.com/AlduVG/NessusVA/assets/131760637/46e25b83-a8fd-45a8-986f-f4bc8a913010)
+
+### Upgrading Mozilla Firefox.
+
+Remediating the vulnerability in Mozilla will be very similar to that in Google Chrome. For this, we go to the Mozilla options menu and select 'About Mozilla'.
+
+![MozillaUpdate 24](https://github.com/AlduVG/NessusVA/assets/131760637/cb4946ca-3735-4039-a112-31d5c1d2b724)
+
+The browser will update to the latest version.
+
+![MozillaUpdate 25](https://github.com/AlduVG/NessusVA/assets/131760637/634835f7-8a7f-40d4-95f8-9cdee8f70945)
+
+### Installing KB5031356.
+To address the vulnerability related to KB5031356, we need to undo the changes we made earlier regarding uninstalling security updates in Windows. 
+
+![NoWindowsUpdate 17](https://github.com/AlduVG/NessusVA/assets/131760637/c48159fc-8fd0-4108-a356-76744c6b9608)
+
+![VAWindowsUpdate 18](https://github.com/AlduVG/NessusVA/assets/131760637/186900c6-6b33-4958-bd4b-7bbe55d4c728)
+
+For this, we go to 'Settings,' resume system updates, and check for available updates to install. 
+
 ![InstallingKB5007186 14](https://github.com/AlduVG/NessusVA/assets/131760637/679c63b1-ae7b-4b5f-8cd2-c716aebd9a39)
 ![InstallingKB5007186 15](https://github.com/AlduVG/NessusVA/assets/131760637/f4008d3c-3e7c-44d5-962b-7cb64e2ec72b)
+
+In my case, I had to install updates and restart several times until eventually there were no more updates to install.
 ![InstallingKB5007186 16](https://github.com/AlduVG/NessusVA/assets/131760637/19e1c3df-71dd-4f19-94da-c26c51a8adbe)
-![NoWindowsUpdate 17](https://github.com/AlduVG/NessusVA/assets/131760637/c48159fc-8fd0-4108-a356-76744c6b9608)
-![VAWindowsUpdate 18](https://github.com/AlduVG/NessusVA/assets/131760637/186900c6-6b33-4958-bd4b-7bbe55d4c728)
-![VASystemConfiguration 19](https://github.com/AlduVG/NessusVA/assets/131760637/4e5274dc-94f3-47ac-80f8-068dc5122a1c)
-![VASystemconfigurationV2 19](https://github.com/AlduVG/NessusVA/assets/131760637/10d8ba25-767c-4567-8d7e-3bed9fea8b4e)
+
+
+### Removing Log4j vulneravility.
+
+To address the vulnerability related to Log4J, we simply need to delete all information related to the Minecraft server that we downloaded previously. It is necessary to empty the recycle bin so that we can mitigate this vulnerability.
+
+![DeletingLog4jVul 13](https://github.com/AlduVG/NessusVA/assets/131760637/61720baa-f899-4d21-9c80-4f83337d8bd3)
+
+### Upgrading 7-Zip, Snip & Sketch and Microsoft 3D.
+
+To address the vulnerabilities related to 7-Zip, Snip & Sketch, and Microsoft 3D, we simply need to download the latest version of these software programs.
+
+### Upgrading CURL to version 8.4.0.
 ![CurlUpdate-20](https://github.com/AlduVG/NessusVA/assets/131760637/de53b671-7684-4e85-ad64-75315305f4c5)
 ![CurlUpdateEnvironmentVariable-21](https://github.com/AlduVG/NessusVA/assets/131760637/fada7f3b-c8d3-4988-9380-91c10d069ebb)
 ![CurlUpdateEnvironmentVariable-22](https://github.com/AlduVG/NessusVA/assets/131760637/c78dca08-bcdc-4579-8de6-acbb8824c2c6)
 ![CurlUpdateEnvironmentVariable-23](https://github.com/AlduVG/NessusVA/assets/131760637/77eb3314-327b-4e42-9cc3-7680d4a63767)
-![MozillaUpdate 24](https://github.com/AlduVG/NessusVA/assets/131760637/cb4946ca-3735-4039-a112-31d5c1d2b724)
-![MozillaUpdate 25](https://github.com/AlduVG/NessusVA/assets/131760637/634835f7-8a7f-40d4-95f8-9cdee8f70945)
+![CurlUpdate-20](https://github.com/AlduVG/NessusVA/assets/131760637/de53b671-7684-4e85-ad64-75315305f4c5)
+![CurlUpdateEnvironmentVariable-21](https://github.com/AlduVG/NessusVA/assets/131760637/fada7f3b-c8d3-4988-9380-91c10d069ebb)
+![CurlUpdateEnvironmentVariable-22](https://github.com/AlduVG/NessusVA/assets/131760637/c78dca08-bcdc-4579-8de6-acbb8824c2c6)
+![CurlUpdateEnvironmentVariable-23](https://github.com/AlduVG/NessusVA/assets/131760637/77eb3314-327b-4e42-9cc3-7680d4a63767)
 
-![GoogleChromeUpdate](https://github.com/AlduVG/NessusVA/assets/131760637/46e25b83-a8fd-45a8-986f-f4bc8a913010)
-![GoogleChromeUpdate-2](https://github.com/AlduVG/NessusVA/assets/131760637/08a605ca-55bd-4ee5-ab0a-bb2aef91436a)
+
+
+
+
 
 
 
