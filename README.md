@@ -81,14 +81,28 @@ To address the vulnerability related to Log4J, we simply need to delete all info
 To address the vulnerabilities related to 7-Zip, Snip & Sketch, and Microsoft 3D, we simply need to download the latest version of these software programs.
 
 ### Upgrading CURL to version 8.4.0.
+To update the CURL vulnerability, follow these steps:
+
+Verify your current CURL version by entering the following commands in CMD:
+
+> curl --version
+
 ![CurlUpdate-20](https://github.com/AlduVG/NessusVA/assets/131760637/de53b671-7684-4e85-ad64-75315305f4c5)
-![CurlUpdateEnvironmentVariable-21](https://github.com/AlduVG/NessusVA/assets/131760637/fada7f3b-c8d3-4988-9380-91c10d069ebb)
-![CurlUpdateEnvironmentVariable-22](https://github.com/AlduVG/NessusVA/assets/131760637/c78dca08-bcdc-4579-8de6-acbb8824c2c6)
-![CurlUpdateEnvironmentVariable-23](https://github.com/AlduVG/NessusVA/assets/131760637/77eb3314-327b-4e42-9cc3-7680d4a63767)
-![CurlUpdate-20](https://github.com/AlduVG/NessusVA/assets/131760637/de53b671-7684-4e85-ad64-75315305f4c5)
-![CurlUpdateEnvironmentVariable-21](https://github.com/AlduVG/NessusVA/assets/131760637/fada7f3b-c8d3-4988-9380-91c10d069ebb)
-![CurlUpdateEnvironmentVariable-22](https://github.com/AlduVG/NessusVA/assets/131760637/c78dca08-bcdc-4579-8de6-acbb8824c2c6)
-![CurlUpdateEnvironmentVariable-23](https://github.com/AlduVG/NessusVA/assets/131760637/77eb3314-327b-4e42-9cc3-7680d4a63767)
+
+> where curl
+
+This ensures accurate identification of the existing version that requires updating. The "where" commands will indicate the location of the "curl.exe" file, usually is C:\Windows\System32\curl.exe.
+
+Download the updated binaries from the official CURL website:
+https://curl.se/windows/
+
+After downloading, replace the existing "curl.exe" file in the system32 directory with the newly downloaded one. To do this, you first need to remove the outdated "curl.exe" file. Begin by claiming full ownership of the file (administrator privileges are required) and then proceed with the replacement. The steps are as follows: Right-click, select properties, navigate to security, go to advanced, and change the owner.
+
+Execute another curl --version command to confirm that the updated version of CURL is now in place.
+
+![CURLUPDATED](https://github.com/AlduVG/NessusVA/assets/131760637/65c29279-acd4-49f2-bee0-ce5ed5f25887)
+
+
 
 
 
