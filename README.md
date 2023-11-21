@@ -15,18 +15,43 @@ For this project, I'll be using the following:
 For the sake of simplicity, I'll be skipping the process of downloading Nessus and creating the Virtual Machine.
 
 ## Windows VM setup.
+Before we begin scanning, let's pause the Windows updates. 
 
 ![SettingUpdateSecurity-1](https://github.com/AlduVG/NessusVA/assets/131760637/ac3870f0-841e-46d5-bb5a-a7a79e6d25e3)
+
+Navigate to Settings > Update & Security. Select "Advanced options" and choose a date to postpone the updates, ensuring that no updates are installed during the selected period. 
+
 ![AdvancedOptions-2](https://github.com/AlduVG/NessusVA/assets/131760637/2be7a56d-1d17-469d-96a1-80fb55ab86fd)
 ![PausingForDays-3](https://github.com/AlduVG/NessusVA/assets/131760637/e4363744-63dd-45f6-9a64-aca3f114d52a)
+
+Return to the previous menu and select "View update history," then "Uninstall updates". 
+
 ![ViewUpdateHistory-4](https://github.com/AlduVG/NessusVA/assets/131760637/15475fe6-b321-4ea6-a35f-7a3a5982270c)
+
+Delete some updates on the host intentionally to make it vulnerable. 
+
 ![UninstallingSecUodates 5](https://github.com/AlduVG/NessusVA/assets/131760637/ac0d6147-9c15-477e-b403-3394aa6bc0cf)
+
+Additionally, turn off the Windows Defender Firewall by searching for Windows Defender and selecting "Windows Defender Firewall options." Set the firewall state to inactive for domain, private, and public profiles.
+
 ![WindowsDefenderOff 6](https://github.com/AlduVG/NessusVA/assets/131760637/2300848e-630b-4c2a-8a2b-961e6c8dce69)
-![HostOnlyAdapater 7](https://github.com/AlduVG/NessusVA/assets/131760637/acf8725a-415a-4f47-a324-a0b1b81c05d4)
+
+Next, open the "Services app" in the Windows menu and locate "Remote Registry." Double-click and change the startup to "Automatic." This allows connection to the system registry database for various operations, such as viewing logs, keys, and values.
+
 ![Services 8](https://github.com/AlduVG/NessusVA/assets/131760637/e3168993-b133-4e85-a921-709e5e5b9696)
+
+Now, search for "User Account Control" and modify it to never notify. This prevents User Account Control prompts from interrupting the scanning process.
+
 ![UserAccountcontrol 9](https://github.com/AlduVG/NessusVA/assets/131760637/287a05f5-8346-467a-8042-43f97f08fc10)
-![RegistryEditor 10](https://github.com/AlduVG/NessusVA/assets/131760637/d0e21c23-5412-4c90-bf1f-5acef69097bf)
+
+Search for "Registry Editor" and navigate to HKEY_LOCAL_MACHINE > Software > Microsoft > Windows > CurrentVersion > Policies > System. Right-click in this folder, go to New > DWORD (32-bit) Value, name it "LocalAccountTokenFilterPolicy," and set the value to 1. This Local Account Token Filter Policy allows non-administrator accounts to access administrative system resources when using a remote procedure call.
+
 ![RegistryEditorDWORD 11](https://github.com/AlduVG/NessusVA/assets/131760637/7214c926-4f14-4f6b-9e0d-f667802bcbd5)
+![RegistryEditor 10](https://github.com/AlduVG/NessusVA/assets/131760637/d0e21c23-5412-4c90-bf1f-5acef69097bf)
+
+## Using Nessus Essentials.
+
+![HostOnlyAdapater 7](https://github.com/AlduVG/NessusVA/assets/131760637/acf8725a-415a-4f47-a324-a0b1b81c05d4)
 ![NessusScan 11](https://github.com/AlduVG/NessusVA/assets/131760637/260d6da6-16c9-456e-bb23-83fc34fd0803)
 ![NessusReport 12](https://github.com/AlduVG/NessusVA/assets/131760637/64324f1e-492f-46d1-a2f8-0455f1f08dfe)
 
