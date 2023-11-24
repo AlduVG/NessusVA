@@ -50,9 +50,34 @@ Search for "Registry Editor" and navigate to HKEY_LOCAL_MACHINE > Software > Mic
 <kbd> ![RegistryEditor 10](https://github.com/AlduVG/NessusVA/assets/131760637/d0e21c23-5412-4c90-bf1f-5acef69097bf) </kbd> 
 
 ## Using Nessus Essentials.
+After installing Nessus Essentials, we will proceed to conduct a basic network scan. Select the "New Scan" option and then choose "Basic Network Scan". 
+
+<kbd> ![NessusScanFINAL1](https://github.com/AlduVG/NessusVA/assets/131760637/336e019f-a38c-44b2-ada6-20a3ae0c52d1) </kbd> 
+
+In the settings, provide the IP address of your guest virtual machine.
+
+<kbd> ![NessusScanFINAL2](https://github.com/AlduVG/NessusVA/assets/131760637/e7f9bf65-d43a-4c47-9762-0f6cccf99f22) </kbd> 
+
+If you don't know it, you can use the 'ipconfig' command to obtain this information. 
+
+<kbd> ![NessusScanFINAL3](https://github.com/AlduVG/NessusVA/assets/131760637/a16ad8b0-c55b-499b-8a3e-29850fadf680) </kbd> 
+
+To enhance the scan, navigate to "Credentials" and choose the authentication method as "Password".
+
+<kbd> ![NessusScanFINAL4](https://github.com/AlduVG/NessusVA/assets/131760637/7b404298-0c61-483a-83ed-7c3797a5769d) </kbd>
+
+Provide your credentials and also the domain. If the domain is unknown, you can use the 'whoami' command in cmd. 
 
 <kbd> ![HostOnlyAdapater 7](https://github.com/AlduVG/NessusVA/assets/131760637/acf8725a-415a-4f47-a324-a0b1b81c05d4) </kbd> 
+
+Additionally, change the network configuration of your virtual machine to "Host-Only Adapter." This way, you can execute your vulnerability scan. 
+
 <kbd> ![NessusScan 11](https://github.com/AlduVG/NessusVA/assets/131760637/260d6da6-16c9-456e-bb23-83fc34fd0803) </kbd> 
+
+Typically, this process takes between 20 to 45 minutes.
+
+Once this time has elapsed, you will notice an abundance of information available for analysis due to the preceding steps. Nessus provides information on vulnerabilities and recommends steps to address them. Furthermore, you have the option to generate a PDF report containing all the information gathered during the scan.
+
 <kbd> ![NessusReport 12](https://github.com/AlduVG/NessusVA/assets/131760637/64324f1e-492f-46d1-a2f8-0455f1f08dfe) </kbd> 
 
 ## Vulnerabilities remediation.
