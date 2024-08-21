@@ -15,6 +15,7 @@ For this project, I'll be using the following:
 For the sake of simplicity, I'll be skipping the process of downloading Nessus and creating the Virtual Machine.
 
 ## Windows VM setup.
+### Stopping and uninstalling Windows updates
 Before we begin scanning, let's pause the Windows updates. 
 
 <kbd> ![SettingUpdateSecurity-1](https://github.com/AlduVG/NessusVA/assets/131760637/ac3870f0-841e-46d5-bb5a-a7a79e6d25e3) </kbd> 
@@ -32,10 +33,12 @@ Delete some updates on the host intentionally to make it vulnerable.
 
 <kbd> ![UninstallingSecUodates 5](https://github.com/AlduVG/NessusVA/assets/131760637/ac0d6147-9c15-477e-b403-3394aa6bc0cf) </kbd> 
 
+### Turning Windows Defender firewall Off
 Additionally, turn off the Windows Defender Firewall by searching for Windows Defender and selecting "Windows Defender Firewall options." Set the firewall state to inactive for domain, private, and public profiles.
 
 <kbd> ![WindowsDefenderOff 6](https://github.com/AlduVG/NessusVA/assets/131760637/2300848e-630b-4c2a-8a2b-961e6c8dce69) </kbd> 
 
+### Modifying Remote Registry
 Next, open the "Services app" in the Windows menu and locate "Remote Registry." Double-click and change the startup to "Automatic." This allows connection to the system registry database for various operations, such as viewing logs, keys, and values.
 
 <kbd> ![Services 8](https://github.com/AlduVG/NessusVA/assets/131760637/e3168993-b133-4e85-a921-709e5e5b9696) </kbd> 
@@ -44,10 +47,20 @@ Now, search for "User Account Control" and modify it to never notify. This preve
 
 <kbd> ![UserAccountcontrol 9](https://github.com/AlduVG/NessusVA/assets/131760637/287a05f5-8346-467a-8042-43f97f08fc10) </kbd> 
 
+### Adding a new DWORD in Registry Editor
 Search for "Registry Editor" and navigate to HKEY_LOCAL_MACHINE > Software > Microsoft > Windows > CurrentVersion > Policies > System. Right-click in this folder, go to New > DWORD (32-bit) Value, name it "LocalAccountTokenFilterPolicy," and set the value to 1. This Local Account Token Filter Policy allows non-administrator accounts to access administrative system resources when using a remote procedure call.
 
 <kbd> ![RegistryEditorDWORD 11](https://github.com/AlduVG/NessusVA/assets/131760637/7214c926-4f14-4f6b-9e0d-f667802bcbd5) </kbd> 
 <kbd> ![RegistryEditor 10](https://github.com/AlduVG/NessusVA/assets/131760637/d0e21c23-5412-4c90-bf1f-5acef69097bf) </kbd> 
+
+### Intalling Vulnerable Software
+Deprecated software will introduce new vulnerabilities to our host. The older version of the Minecraft server is going to introduce the Log4J vulnerability. 7zip and an older version of Chrome will introduce their respective vulnerabilities as well.
+
+These are the links that I used to get these software versions:
+
+- https://7-zip.en.uptodown.com/windows/versions
+- https://mcversions.net/download/1.18.1
+- https://www.slimjet.com/chrome/google-chrome-old-version.php
 
 ## Using Nessus Essentials.
 After installing Nessus Essentials, we will proceed to conduct a basic network scan. Select the "New Scan" option and then choose "Basic Network Scan". 
