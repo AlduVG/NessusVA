@@ -1,4 +1,4 @@
-# NessusVA
+# Nessus VA
 ## Introduction.
 A vulnerability assessment is the process of identifying, quantifying, and prioritizing vulnerabilities within an information system. This process helps by bringing awareness to the security posture of an organization to remediate these weaknesses before a threat can take advantage.
 
